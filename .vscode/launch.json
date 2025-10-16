@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train CNN+GAN",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "src/trainers/train_cnn_gan.py",
+      "args": ["--config", "configs/cnn_gan_mel.yaml"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Baseline Eval",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "src/eval/eval_metrics.py",
+      "args": [
+        "--pairs_csv", "data/processed_nbwb/manifest.csv",
+        "--pred_dir", "experiments/baseline_out",
+        "--sr", "16000"
+      ],
+      "console": "integratedTerminal"
+    }
+  ]
+}

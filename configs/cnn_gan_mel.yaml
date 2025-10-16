@@ -1,0 +1,18 @@
+# CNN+GAN on mel-spectrograms
+sr: 16000
+fft: 512
+hop: 128
+win: 512
+n_mels: 80
+fmin: 20
+fmax: 8000
+segment_seconds: 1.0
+batch_size: 16
+epochs: 50
+lr_g: 2.0e-4
+lr_d: 2.0e-4
+lambda_adv: 1.0
+lambda_l1: 50.0
+checkpoint_dir: experiments/cnn_gan/checkpoints
+sample_dir: experiments/cnn_gan/samples
+pairs_csv: data/processed_nbwb/manifest.csv

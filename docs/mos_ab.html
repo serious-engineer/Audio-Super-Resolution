@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>MOS AB Test</title></head>
+<body>
+<h3>MOS AB</h3>
+<p>Listen and choose which sounds better (or 'same').</p>
+<audio id="a1" controls></audio>
+<audio id="a2" controls></audio>
+<div>
+<button onclick="vote('A')">A better</button>
+<button onclick="vote('B')">B better</button>
+<button onclick="vote('S')">Same</button>
+</div>
+<script>
+let idx = 0;
+const rows = []; // push {file, choice}
+const files = []; // fill with JS that loads CSV names
+function vote(c){
+  rows.push({i: idx, choice: c});
+  idx++;
+  // TODO: advance
+  if(idx>=files.length){ download(); }
+}
+function download(){
+  const blob = new Blob([JSON.stringify(rows)], {type:"application/json"});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = "mos_votes.json";
+  a.click();
+}
+</script>
+</body></html>

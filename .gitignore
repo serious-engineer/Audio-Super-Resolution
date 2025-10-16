@@ -1,0 +1,43 @@
+# === Python environments ===
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.log
+
+# === Data & generated files ===
+data/raw_wb/
+data/processed_nbwb/
+experiments/
+outputs/
+checkpoints/
+runs/
+*.wav
+*.npy
+*.npz
+*.csv
+!data/processed_nbwb/manifest.csv  # keep manifest if needed
+
+# === Build & system ===
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+# === Jupyter / notebooks ===
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# === Temporary / cache ===
+tmp/
+cache/
+logs/

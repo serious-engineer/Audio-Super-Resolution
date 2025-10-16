@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Prepare Pairs",
+      "type": "shell",
+      "command": "python src/utils/prepare_pairs.py --in_dir data/raw_wb --out_dir data/processed_nbwb --sr_wb 16000 --sr_nb 8000",
+      "problemMatcher": []
+    },
+    {
+      "label": "Baseline → Audio",
+      "type": "shell",
+      "command": "python src/baselines/run_baseline.py --pairs data/processed_nbwb/manifest.csv --out_dir experiments/baseline_out"
+    },
+    {
+      "label": "Eval (PESQ/STOI)",
+      "type": "shell",
+      "command": "python src/eval/eval_metrics.py --pairs_csv data/processed_nbwb/manifest.csv --pred_dir experiments/baseline_out --sr 16000"
+    }
+  ]
+}
