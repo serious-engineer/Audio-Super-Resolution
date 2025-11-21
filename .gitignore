@@ -11,8 +11,7 @@ __pycache__/
 *.log
 
 # === Data & generated files ===
-data/raw_wb/
-data/processed_nbwb/
+data/
 experiments/
 outputs/
 checkpoints/
