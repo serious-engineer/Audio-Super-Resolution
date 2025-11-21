@@ -1,11 +1,4 @@
-numpy
-scipy
-librosa
-soundfile
+
 torch
 torchaudio
-tqdm
-matplotlib
-pesq
-pystoi
-pandas
+numpy

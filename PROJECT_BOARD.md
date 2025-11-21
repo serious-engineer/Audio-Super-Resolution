@@ -98,11 +98,14 @@ Use this as your **Kanban inside VS Code**. Open it alongside the repo and keep 
 ---
 
 ## 📝 Daily Log (fill as you go)
-- **2025-10-18** —
-  - What I planned:
+- **2025-10-20** —
+  - What I planned: 
   - What I did:
   - Roadblocks:
   - Next actions:
+  - Notes 
+    -  speech dataset from https://openslr.org/12/
+    -  Music dataset from - https://www.kaggle.com/datasets/ayu055/musdb18hq?resource=download
 
 ---
 

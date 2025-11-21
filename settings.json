@@ -1,6 +1,0 @@
-{
-  "python.formatting.provider": "black",
-  "editor.formatOnSave": true,
-  "ruff.lint.args": ["--select=E,F,I,N,UP,B", "--line-length=100"],
-  "python.analysis.typeCheckingMode": "basic"
-}
