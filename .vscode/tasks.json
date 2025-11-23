@@ -2,20 +2,53 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Prepare Pairs",
+      "label": "Prepare HR/LR dataset",
       "type": "shell",
-      "command": "python src/utils/prepare_pairs.py --in_dir data/raw_wb --out_dir data/processed_nbwb --sr_wb 16000 --sr_nb 8000",
+      "command": "python",
+      "args": [
+        "-m",
+        "src.dataset.make_low_sr_dataset",
+        "--in_root",
+        "archive"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "problemMatcher": []
     },
     {
-      "label": "Baseline → Audio",
+      "label": "Train AudioSR",
       "type": "shell",
-      "command": "python src/baselines/run_baseline.py --pairs data/processed_nbwb/manifest.csv --out_dir experiments/baseline_out"
+      "command": "python",
+      "args": [
+        "-m",
+        "src.train",
+        "--dataset_dir",
+        "data",
+        "--batch_size",
+        "32",
+        "--epochs",
+        "100"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
     },
     {
-      "label": "Eval (PESQ/STOI)",
+      "label": "Infer AudioSR",
       "type": "shell",
-      "command": "python src/eval/eval_metrics.py --pairs_csv data/processed_nbwb/manifest.csv --pred_dir experiments/baseline_out --sr 16000"
+      "command": "python",
+      "args": [
+        "-m",
+        "src.infer",
+        "--max_files",
+        "20"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
     }
   ]
 }

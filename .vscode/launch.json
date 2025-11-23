@@ -2,25 +2,49 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Train CNN+GAN",
+      "name": "Train AudioSR-GAN (48k)",
       "type": "debugpy",
       "request": "launch",
-      "program": "src/trainers/train_cnn_gan.py",
-      "args": ["--config", "configs/cnn_gan_mel.yaml"],
+      "program": "${workspaceFolder}/src/train.py",
+      "args": [
+        "--dataset_dir",
+        "data",
+        "--out_dir",
+        "checkpoints_gan",
+        "--batch_size",
+        "32",
+        "--epochs",
+        "1000"
+      ],
       "console": "integratedTerminal",
-      "justMyCode": true
+      "justMyCode": true,
+      "cwd": "${workspaceFolder}"
     },
     {
-      "name": "Baseline Eval",
+      "name": "Single-file Inference",
       "type": "debugpy",
       "request": "launch",
-      "program": "src/eval/eval_metrics.py",
+      "program": "${workspaceFolder}/src/infer.py",
       "args": [
-        "--pairs_csv", "data/processed_nbwb/manifest.csv",
-        "--pred_dir", "experiments/baseline_out",
-        "--sr", "16000"
+        "--input_wav",
+        "data/low_sr/p225_001.wav",
       ],
-      "console": "integratedTerminal"
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Batch Inference",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/infer.py",
+      "args": [
+        "--max_files",
+        "20"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "cwd": "${workspaceFolder}"
     }
   ]
 }

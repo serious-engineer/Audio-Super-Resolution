@@ -12,15 +12,6 @@ __pycache__/
 
 # === Data & generated files ===
 data/
-experiments/
-outputs/
-checkpoints/
-runs/
-*.wav
-*.npy
-*.npz
-*.csv
-!data/processed_nbwb/manifest.csv  # keep manifest if needed
 
 # === Build & system ===
 .DS_Store
@@ -31,10 +22,6 @@ Thumbs.db
 !.vscode/launch.json
 !.vscode/tasks.json
 !.vscode/extensions.json
-
-# === Jupyter / notebooks ===
-.ipynb_checkpoints/
-notebooks/.ipynb_checkpoints/
 
 # === Temporary / cache ===
 tmp/
