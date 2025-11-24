@@ -15,6 +15,7 @@ data/
 checkpoints_gan/ckpt_last.pt
 checkpoints/ckpt_last.pt
 outputs_gan/
+archive/
 
 # === Build & system ===
 .DS_Store
