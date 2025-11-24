@@ -12,16 +12,18 @@ __pycache__/
 
 # === Data & generated files ===
 data/
+checkpoints_gan/ckpt_last.pt
+checkpoints/ckpt_last.pt
+outputs_gan/
 
 # === Build & system ===
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/*
-!.vscode/settings.json
+!.vscode/extensions.json
 !.vscode/launch.json
 !.vscode/tasks.json
-!.vscode/extensions.json
 
 # === Temporary / cache ===
 tmp/

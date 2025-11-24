@@ -1,0 +1,33 @@
+[Info] Spectrograms will be saved to: Audio-Super-Resolution\src\metrics\spectrograms
+[Single file mode] Evaluating SR file: outputs_gan/p225_003_sr.wav
+[metrics] compute_stoi_pesq: sr_ref=22050, target_sr=16000
+[metrics] ref shape=torch.Size([172032]), est shape=torch.Size([172032])
+[metrics] compute_stoi_pesq: sr_ref=22050, target_sr=16000
+[metrics] ref shape=torch.Size([172032]), est shape=torch.Size([172032])
+[metrics] compute_stoi_pesq: sr_ref=22050, target_sr=16000
+[metrics] ref shape=torch.Size([172032]), est shape=torch.Size([172032])
+p225_003_sr.wav | [HR–SR] SNR=0.00 dB, LSD=1.327 | [HR–LR] SNR=18.32 dB, LSD=5.355 | [LR–SR] SNR=0.00 dB, LSD=5.065
+
+=== AVERAGE METRICS: HR vs SR ===
+SNR (dB): 0.0002
+MSE:      0.029546
+MAE:      0.082202
+LSD:      1.327285
+STOI:     0.9781
+PESQ:     3.1589
+
+=== AVERAGE METRICS: HR vs LR ===
+SNR (dB): 18.3164
+MSE:      0.000229
+MAE:      0.006134
+LSD:      5.354770
+STOI:     0.9981
+PESQ:     3.9921
+
+=== AVERAGE METRICS: SR vs LR ===
+SNR (dB): 0.0002
+MSE:      0.029455
+MAE:      0.080159
+LSD:      5.064551
+STOI:     0.9780
+PESQ:     1.9764

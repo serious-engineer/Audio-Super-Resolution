@@ -27,7 +27,7 @@
       "program": "${workspaceFolder}/src/infer.py",
       "args": [
         "--input_wav",
-        "data/low_sr/p225_001.wav",
+        "data/low_sr/p225_003.wav",
       ],
       "console": "integratedTerminal",
       "justMyCode": true,

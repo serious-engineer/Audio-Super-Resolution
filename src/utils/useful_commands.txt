@@ -1,0 +1,24 @@
+python -m src.utils.make_low_sr_dataset  --data_root data  --sample_rate 48000  --low_sr 
+python -m src.dataset.prepare_dataset_22k  --in_root data --out_root data/hr_22k --target_sr 22050
+
+22k
+python -m src.train  --dataset_dir data  --out_dir checkpoints  --batch_size 32  --epochs 100  --resume
+
+python -m src.train_gan  --dataset_dir data  --out_dir checkpoints_gan --batch_size 32 --epochs 100
+
+
+python -m src.infer --generator_ckpt checkpoints/generator_final.pt --hr_dir data/hr --output_dir outputs
+python -m src.infer --generator_ckpt checkpoints/generator_final.pt --hr_dir data/hr --max_files 10 --output_dir outputs
+python -m src.infer --input_wav data/low_sr/p225_001.wav --generator_ckpt checkpoints/generator_final.pt --hr_dir data/hr --output_dir outputs
+python -m src.infer --generator_ckpt checkpoints/generator_epoch_500.pt --low_sr_dir data/low_sr --hr_dir data/hr  --output_dir outputs_hifigan --vocoder hifigan48 --max_files 10
+
+python -m src.infer --generator_ckpt checkpoints/generator_final.pt --input_wav data/low_sr/p225_001.wav --vocoder vocos48 --sample_rate 48000 --n_mels 128 --hr_dir data/hr --output_dir outputs
+
+python -m src.infer --generator_ckpt checkpoints/generator_final.pt --input_wav data/low_sr/p225_001.wav --vocoder hifigan48 --sample_rate 48000 --n_mels 128 --hr_dir data/hr --output_dir outputs
+
+python -m src.infer --input_wav data/low_sr/p225_001.wav
+python -m src.infer --max_files 5
+
+python -m src.utils.eval  --sr_file outputs/p225_001_sr.wav
+
+python -m src.utils.vocoder_eval --hr_dir data/test/ --max_files 5 --save_recon  

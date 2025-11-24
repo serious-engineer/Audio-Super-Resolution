@@ -36,7 +36,22 @@
       "problemMatcher": []
     },
     {
-      "label": "Infer AudioSR",
+      "label": "Infer AudioSR single file",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "-m",
+        "src.infer",
+        "--input_wav",
+        "data/low_8k/p225_003.wav "
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Infer AudioSR (on 20 files)",
       "type": "shell",
       "command": "python",
       "args": [
