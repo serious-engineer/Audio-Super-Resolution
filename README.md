@@ -40,10 +40,10 @@ This project performs **Audio Super‑Resolution (Speech Bandwidth Extension)**,
 ## 🧠 Model Architecture
 
 ### Training Pipeline
-![Training Pipeline](docs/assets/training_pipeline.png)
+![Training Pipeline](docs/assets/Training.png)
 
 ### Inference Pipeline
-![Inference Pipeline](docs/assets/inference_pipeline.png)
+![Inference Pipeline](docs/assets/Inference.png)
 
 
 # Mel configuration used across training, inference, and vocoder reconstruction
