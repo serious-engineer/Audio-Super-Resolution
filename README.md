@@ -36,6 +36,16 @@ This project performs **Audio Super‑Resolution (Speech Bandwidth Extension)**,
             ▼
   Final Reconstructed 22.05 kHz Audio
 ```
+
+## 🧠 Model Architecture
+
+### Training Pipeline
+![Training Pipeline](docs/assets/training_pipeline.png)
+
+### Inference Pipeline
+![Inference Pipeline](docs/assets/inference_pipeline.png)
+
+
 # Mel configuration used across training, inference, and vocoder reconstruction
 ```
 Sample rate: 22,050 Hz (fixed requirement — mel extractor MUST match vocoder SR)
