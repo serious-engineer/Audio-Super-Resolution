@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Super-Resolution Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            color: #222;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        audio {
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speech Bandwidth Extension — Audio Demo</h1>
+    <p>This page contains LR → SR → HR audio comparisons.</p>
+
+    <table>
+        <tr>
+            <th>Low-Resolution (Input)</th>
+            <th>Super-Resolved (Output)</th>
+            <th>High-Resolution (Reference)</th>
+        </tr>
+
+        <tr>
+            <td><audio controls><source src="demo/input.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="demo/sr.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="demo/hr.wav" type="audio/wav"></audio></td>
+        </tr>
+    </table>
+
+</body>
+</html>
