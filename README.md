@@ -37,7 +37,7 @@ This project performs **Audio Super‑Resolution (Speech Bandwidth Extension)**,
   Final Reconstructed 22.05 kHz Audio
 ```
 
-## 🧠 Model Architecture
+##  Model Architecture
 
 ### Training Pipeline
 ![Training Pipeline](docs/assets/Training.png)
