@@ -1,6 +1,6 @@
 # AudioSR-GAN: Speech Bandwidth Extension (8 kHz → 22.05 kHz)
 
-## 📘 Overview
+## Overview
 
 This project performs **Audio Super‑Resolution (Speech Bandwidth Extension)**, transforming **8 kHz narrow‑band audio** into **22.05 kHz wide‑band audio** using:
 
@@ -11,7 +11,7 @@ This project performs **Audio Super‑Resolution (Speech Bandwidth Extension)**,
 
 ---
 
-## 🔄 Full Workflow (High‑Level)
+## Full Workflow (High‑Level)
 
 ```
   Low‑Resolution Audio (8 kHz)
@@ -82,7 +82,7 @@ Correct conditioning for both HiFi‑GAN and Vocos vocoders strike a balance bet
 ```
 ---
 
-## 📁 1. Dataset Preparation (8 kHz → 22.05 kHz)
+##  1. Dataset Preparation (8 kHz → 22.05 kHz)
 
 ### **Generate HR (22,050 Hz) & LR (8,000 Hz) pairs**
 
@@ -96,7 +96,7 @@ python -m  src.dataset.audio_properties data/hr/p225_001.wav
 ```
 ---
 
-## 🧠 2. Train the CNN Baseline Model (Or the CNN-GAN model in Step 3 )
+##  2. Train the CNN Baseline Model (Or the CNN-GAN model in Step 3 )
 
 ```bash
 python -m src.train --dataset_dir data --out_dir checkpoints --batch_size 32 --epochs 100
@@ -104,7 +104,7 @@ python -m src.train --dataset_dir data --out_dir checkpoints --batch_size 32 --e
 
 ---
 
-## 🎛️ 3. Train the GAN Model
+##  3. Train the GAN Model
 
 ```bash
 python -m src.train_gan --dataset_dir data --out_dir checkpoints_gan --batch_size 32 --epochs 100
@@ -112,7 +112,7 @@ python -m src.train_gan --dataset_dir data --out_dir checkpoints_gan --batch_siz
 
 ---
 
-## 🔊 4. Standard Inference (Generator Only)
+##  4. Standard Inference (Generator Only)
 
 ### **A. Run inference on entire HR directory**
 
@@ -134,7 +134,7 @@ python -m src.infer --input_wav data/low_sr/p225_001.wav --generator_ckpt checkp
 
 ---
 
-## 🔥 5. Inference (Using Griffin Lim Vocoder)**
+##  5. Inference (Using Griffin Lim Vocoder)**
 
 ```bash
 python -m src.infer --input_wav data/low_sr/p225_001.wav --generator_ckpt checkpoints/generator_final.pt --hr_dir data/hr --output_dir outputs --vocoder griffin
@@ -142,7 +142,7 @@ python -m src.infer --input_wav data/low_sr/p225_001.wav --generator_ckpt checkp
 
 ---
 
-## 🧪 6. Quick Testing Utilities
+##  6. Quick Testing Utilities
 
 ```bash
 python -m src.infer --input_wav data/low_sr/p225_001.wav
@@ -151,7 +151,7 @@ python -m src.infer --max_files 5
 
 ---
 
-## 📈 7. Evaluation
+##  7. Evaluation
 
 ### **Evaluate SR quality (STOI, PESQ, LSD, SNR, MSE)**
 
@@ -167,7 +167,7 @@ python -m src.utils.vocoder_eval --hr_dir data/test/ --max_files 5 --save_recon
 
 ---
 
-## 🧩 Block Diagram (Mel‑Domain GAN)
+##  Block Diagram (Mel‑Domain GAN)
 
 ```
    ┌───────────────────────────────────────────────┐
@@ -193,7 +193,7 @@ python -m src.utils.vocoder_eval --hr_dir data/test/ --max_files 5 --save_recon
 
 ---
 
-## 🎯 Future Improvements
+##  Future Improvements
 
 * Diffusion‑based vocoders
 * Multi‑speaker embeddings
